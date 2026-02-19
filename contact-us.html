@@ -332,7 +332,39 @@
 
 <div class="row">
 	<div class="col-12 col-xl-7">
-		__FORM__GOES__HERE
+						<form action="https://formspree.io/f/placeholder" method="POST">
+							<div class="form-group mb-3">
+								<label for="name" class="font-weight-bold">Full Name <span class="text-danger">*</span></label>
+								<input type="text" name="name" id="name" class="form-control" placeholder="Enter your full name" required>
+							</div>
+							<div class="form-group mb-3">
+								<label for="email" class="font-weight-bold">Email Address <span class="text-danger">*</span></label>
+								<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+							</div>
+							<div class="form-group mb-3">
+								<label for="phone" class="font-weight-bold">Phone Number</label>
+								<input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone number">
+							</div>
+							<div class="form-group mb-3">
+								<label for="subject" class="font-weight-bold">Subject</label>
+								<select name="subject" id="subject" class="form-control">
+									<option value="General Inquiry">General Inquiry</option>
+									<option value="Residential Quote">Residential Quote</option>
+									<option value="Commercial Quote">Commercial Quote</option>
+									<option value="Scheduling">Scheduling</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
+							<div class="form-group mb-4">
+								<label for="message" class="font-weight-bold">How can we help? <span class="text-danger">*</span></label>
+								<textarea name="message" id="message" rows="5" class="form-control" placeholder="Tell us about your project" required></textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-cta w-100 py-3 font-weight-bold">
+									Send Message Today!
+								</button>
+							</div>
+						</form>
 	</div>
 	<div class="col-12 col-xl-5">
 		<div class="row">
