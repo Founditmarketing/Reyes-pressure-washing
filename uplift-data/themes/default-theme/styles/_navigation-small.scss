@@ -1,0 +1,78 @@
+#small-navigation-container-1 {
+	
+	box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.33);
+	position: relative;
+	z-index: 20;
+}
+#small-navigation-top-bar {
+	box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.33);
+	background-color: map-get($theme-colors, "primary");
+}
+#small-navigation-container-1 > .pullout-menu-backdrop {
+	background-color: rgba(0, 0, 0, 0.33);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+#small-navigation-container-1 > .pullout-menu-backdrop {
+	overflow: hidden; /* Prevents Scroll Bars when Animating the Child Div into View */
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	background-color: darken(map-get($theme-colors, "primary"), 5%);
+	overflow: auto;
+	z-index: 11;
+	width: 70%;
+	max-width: 240px;
+	margin-right:-250px; /* We will animate this to 0 when they open the menu */
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .menu-heading {
+	font-family: $font-prime;
+	font-weight: normal;
+	font-size: 2.25rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: left;
+	padding: 0.75rem 1.25rem;
+	color: map-get($theme-colors, "tertiary");
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links > div > a {
+	display: block;
+	font-family: $font-second;
+	font-weight: normal;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: left;
+	padding: 0.75rem 1.25rem;
+	color: #FFFFFF;
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links > div a:hover {
+	// background-color: map-get($theme-colors, "primary");
+	color: map-get($theme-colors, "secondary");
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links > div > div a {
+	display: block;
+	font-family: $font-third;
+	font-weight: normal;
+	font-size: 0.88rem;
+	text-transform: none;
+	text-decoration: none;
+	text-align: left;
+	padding: 0.75rem 1.25rem;
+	color: #FFFFFF;
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links div:not(:last-child) > a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links .tap-dropdown {
+	display: none;
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links .tap-dropdown > div > a {
+	padding-left: 1.85em; /* Indent sub-menus */
+}
+#small-navigation-container-1 > .pullout-menu-backdrop > div > .navigation-links .tap-dropdown > div > div a {
+	padding-left: 2.85em; /* Indent deeper sub-menus */
+}

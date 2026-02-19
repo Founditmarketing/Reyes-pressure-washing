@@ -1,0 +1,52 @@
+.grid {
+	display: grid;
+	box-sizing: border-box;
+	grid-template-columns: repeat(1, 1fr);
+}
+@for $i from 1 through 12 {
+	.grid-#{$i}{
+		display: grid;
+		box-sizing: border-box;
+		grid-template-columns: repeat(#{$i}, 1fr);
+	}
+	@each $breakpoint, $pixel-value in $grid-breakpoints{
+		@media screen and (min-width: $pixel-value){
+			.grid-#{$breakpoint}-#{$i}{
+				display: grid;
+				box-sizing: border-box;
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+}
+
+@for $i from 0 through 5 {
+	.grid-gap-#{$i} {
+		grid-gap: map-get($spacers, $i);
+		gap: map-get($spacers, $i);
+	}
+	.grid-row-gap-#{$i} {
+		grid-row-gap: map-get($spacers, $i);
+		row-gap: map-get($spacers, $i);
+	}
+	.grid-column-gap-#{$i} {
+		grid-column-gap: map-get($spacers, $i);
+		column-gap: map-get($spacers, $i);
+	}
+	@each $breakpoint, $pixel-value in $grid-breakpoints{
+		@media screen and (min-width: $pixel-value){
+			.grid-gap-#{$breakpoint}-#{$i} {
+				grid-gap: map-get($spacers, $i) !important;
+				gap: map-get($spacers, $i) !important;
+			}
+			.grid-row-gap-#{$breakpoint}-#{$i} {
+				grid-row-gap: map-get($spacers, $i) !important;
+				row-gap: map-get($spacers, $i) !important;
+			}
+			.grid-column-gap-#{$breakpoint}-#{$i} {
+				grid-column-gap: map-get($spacers, $i) !important;
+				column-gap: map-get($spacers, $i) !important;
+			}
+		}
+	}
+}

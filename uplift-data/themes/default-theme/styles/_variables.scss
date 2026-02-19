@@ -1,0 +1,48 @@
+$theme-colors: (
+	"primary":   #1566c4,
+	"secondary": #42c9d4,
+	"tertiary":  #dcdcdd
+);
+
+$color-prime: map-get($theme-colors, "primary");
+$color-second: map-get($theme-colors, "secondary");
+$color-third: map-get($theme-colors, "tertiary");
+
+// Enable rounded?
+$enable-rounded: false;
+
+// Enable Bootstrap 4.3's responsive font sizes
+$enable-responsive-font-sizes: true;
+
+// Border classes width
+$theme-borders-width: 2px;
+
+//Path to FontAwesome
+$fa-font-path: "../styles/dependencies/font-aw/webfonts";
+$fa-font-display: swap;
+
+@font-face {
+	font-family: 'Impact-Bold';
+	src: url(../fonts/impact.ttf);
+	font-display: swap;
+}
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url(../fonts/OpenSans-Regular.ttf);
+	font-display: swap;
+}
+@font-face {
+	font-family: 'OpenSans-Bold';
+	src: url(../fonts/OpenSans-Bold.ttf);
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url(../fonts/Roboto-Regular.ttf);
+	font-display: swap;
+}
+
+$font-prime:  Impact-Bold, sans-serif;
+$font-second: OpenSans-Regular, sans-serif;
+$font-second-bold: OpenSans-Bold, sans-serif;
+$font-third:  Roboto-Regular, sans-serif;

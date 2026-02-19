@@ -1,0 +1,54 @@
+// Styles needed to import before Bootstrap
+@import "variables";
+@import "utilities/spacers-extended";
+
+// Dependencies
+@import "dependencies/bootstrap/scss/bootstrap.scss";
+@import "dependencies/font-aw/scss/fontawesome.scss";
+@import "dependencies/font-aw/scss/solid.scss";
+@import "dependencies/font-aw/scss/brands.scss";
+
+// Utilities
+@import "utilities/animation-engine-views";
+@import "utilities/backgrounds";
+@import "utilities/borders";
+@import "utilities/carousel";
+@import "utilities/gallery";
+@import "utilities/grid";
+@import "utilities/images";
+@import "utilities/lists";
+@import "utilities/text";
+@import "utilities/width";
+
+// Custom Styles
+@import "defaults";
+@import "btns";
+@import "banner";
+@import "navigation-small";
+@import "navigation-large";
+@import "service-icons";
+@import "articles";
+@import "custom";
+@import "footer";
+@import "sidebar";
+
+#content a:not(.btn):not(.timeline-title) {
+	color: darken(map-get($theme-colors, "primary"), 0%);
+	&:hover {
+		color: darken(map-get($theme-colors, "primary"), 20%);
+	}
+}
+
+#cms-breadcrumb > .trail:not(:last-child) {
+    padding-right: 0.25rem;
+    &:after{
+        content:"/";
+    }
+}
+
+.call-num:hover {
+	color: darken(map-get($theme-colors, "secondary"), 20%) !important;
+}
+.card-deck .card {
+	max-width: 500px;
+}

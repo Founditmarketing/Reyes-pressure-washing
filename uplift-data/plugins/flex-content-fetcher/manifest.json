@@ -1,0 +1,6 @@
+{
+	"pluginName":"Flex Library Content Parser",
+	"pluginDescription":"Attempts to fetch and re-parse Flex-based websites into Bootstrap and content that can be used to build pages in the system.",
+	"pluginAuthor":"Garet C. Green",
+	"pluginVersion":"1.1.2"
+}

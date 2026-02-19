@@ -1,0 +1,104 @@
+.z-up {
+    z-index: 5;
+}
+.z-super {
+    z-index: 200;
+}
+
+
+.mover {
+    top: 0;
+    left: 0;
+}
+
+.bgcover {
+    min-height: 500px;
+}
+
+
+.num-btn {
+    position:absolute;
+    top: 0;
+    right: 10px;
+}
+
+.social-top {
+	color: map-get($theme-colors, "secondary")!important;
+	transition: all 450ms;
+	&:hover {
+		color: map-get($theme-colors, "primary")!important;
+	}
+}
+
+.wrap {
+    min-height: 300px;
+}
+
+.overno {
+    overflow: hidden;
+}
+
+#banner {
+    position: relative;
+}
+
+.move-up{
+    margin-top: -70px;
+}
+
+h1 {
+    color:map-get($theme-colors, "primary")!important;
+}
+
+.card {
+    border:none;
+}
+.watermark {
+	opacity:.2;
+}
+.service {
+	.bg-picture-container {
+		min-height:300px;
+	}
+}
+
+/************************* SVG **************************/
+.wave-1 {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	fill:$color-prime;
+	z-index:3;
+}
+.wave-v {
+	position:absolute;
+	height:100%;
+	z-index:2;
+	&.left {
+		left:-1px;
+	}
+	&.right {
+		right:-1px;
+		transform:scale(-1, -1);
+	}
+	&.prime {
+		fill:$color-prime;
+	}
+	@include media-breakpoint-down(sm) {
+		display:none;
+	}
+}
+.wave-h {
+	position:absolute;
+	width:100%;
+	z-index:2;
+	bottom:-1px;
+	display:none;
+	&.prime {
+		fill:$color-prime
+	}
+	@include media-breakpoint-down(sm) {
+		display:block;
+	}
+}

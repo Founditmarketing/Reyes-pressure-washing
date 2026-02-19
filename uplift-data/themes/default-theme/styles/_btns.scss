@@ -1,0 +1,85 @@
+/* ******************************************************************************************** */
+/* BUTTONS STYLING **************************************************************************** */
+/* ******************************************************************************************** */
+
+.btn-call-num, .btn-req-serv, .btn-banner, .btn-cta, .btn-reviews, .btn-more {
+    transition: all 0.5s ease;
+    font-family: $font-prime;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    color: #FFFFFF !important;
+    border: 0;
+    @include media-breakpoint-down(md) {
+        font-size: 0.8rem;
+    }
+}
+
+.btn-call-num, .btn-more, .btn-reviews {
+    background-color: map-get($theme-colors, primary);
+    &:hover {
+        background-color: darken(map-get($theme-colors, primary), 10%);
+    }
+}
+
+.btn-req-serv, .btn-cta, .btn-banner  {
+    background-color: darken(map-get($theme-colors, secondary), 5%);
+    &:hover {
+        background-color: darken(map-get($theme-colors, secondary), 20%);
+		color:white;
+    }
+}
+
+/* Exploding Button Styling ******************************************************************** */
+
+@keyframes btn-explode{
+	0%{
+		opacity:1;
+		transform:scale(1);
+	}
+
+	99%{
+		opacity:0;
+		transform:scale(2);
+	}
+
+	100%{
+		pointer-events:none;
+		opacity:0;
+		transform:scale(2);
+	}
+}
+
+.sp-button-explode{
+	& > a{
+		position:relative;
+		z-index:2;
+		& > .explosion-outliner{
+			display:none;
+			position:absolute;
+			z-index:3;
+			width:100%;
+			height:100%;
+			top:0;
+			left:0;
+			background:transparent;
+			border:3px solid map-get($theme-colors, primary);
+		}
+	}
+
+	&:hover{
+		& > a{
+			& > .explosion-outliner{
+				display:block;
+				animation:btn-explode;
+				animation-duration:190ms;
+				animation-fill-mode:forwards;
+			}
+		}
+	}
+}
+
+/* ******************************************************************************************** */

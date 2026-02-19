@@ -1,0 +1,248 @@
+/* Large Navigation with Animated Borders ****************************************************** */
+
+/* Setting Up Keyframes ************************************************************************ */
+
+$animations-duration: 190ms;
+
+@keyframes fade-in-dropdown-menu {
+	from {
+		transform: translateY(90px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-from-right-dropdown-menu {
+	from {
+		transform: translateX(90px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-from-left-dropdown-menu {
+	from {
+		transform: translateX(-90px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+/* Styling for Overall Navigation ************************************************************** */
+
+#lg-nav-v2-1 {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	position: relative;
+	z-index: 20; /* Must be More than 15 since 15 is Banner Default */
+	#nav-v2-1-trim {
+		/* todo here */
+	}
+	.nav-lg {
+		#nav-v2-1-logo-container {
+			padding: 0.5rem .5rem;
+			
+			img {
+				position: absolute;
+				width: 120%;
+				top: 50%;
+				left: 50%;
+				max-width: 350px;
+				transform: translate(-50%, -45%);
+			}
+		}
+		#nav-v2-1-contents {
+			#nav-v2-1-links {
+				& > .nav-v2-1-link:not(:last-child) {
+					/* todo here */
+				}
+				& > .nav-v2-1-link {
+					font-family: $font-second;
+					font-weight: normal;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					text-align: center;
+					position: relative;
+					z-index: 1;
+					a {
+						color:$color-prime;
+					}
+
+					/* First Set of Dropdowns Setup */
+					& > .nav-v2-1-dropdown {
+						box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+						background-color: #FFFFFF;
+						border-radius: 0.15rem;
+						border: 0;
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 225px;
+						display: none;
+						z-index: 20;
+
+						& > .nav-v2-1-dropdown-1-link:not(:last-child) {
+							border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+						}
+
+						& > .nav-v2-1-dropdown-1-link {
+							position: relative;
+							text-align: left;
+							font-family: $font-third;
+							font-size: 0.9rem;
+							text-transform: none;
+							z-index: 20;
+
+							/* Secondary Set of Dropdowns Setup */
+							& > .nav-v2-1-dropdown-2 {
+								box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+								background-color: #FFFFFF;
+								border-radius: 0.15rem;
+								border: 0;
+								position: absolute;
+								top: 0;
+								width: 225px;
+								display: none;
+								z-index: 20;
+								&.right {
+									left: 100%;
+								}
+								&.left {
+									right: 100%;
+								}
+								& > .nav-v2-1-dropdown-2-link:not(:last-child) {
+									border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+								}
+								& > .nav-v2-1-dropdown-2-link {
+									position: relative;
+									z-index: 104;
+									& > .nav-v2-1-border-animator {
+										position: absolute;
+										z-index: 20;
+										left: 0;
+										top: 0;
+										height: 100%;
+										width: 0;
+										transition: width $animations-duration;
+										background-color: map-get($theme-colors, tertiary);
+									}
+									& > a {
+										display: block;
+										padding: 0.75rem 1.5rem;
+										color: #232323;
+										text-align: left;
+									}
+									&:hover {
+										& > .nav-v2-1-border-animator {
+											width: 4px;
+										}
+										& > a {
+											color: #5C5C5C !important;
+										}
+									}
+								}
+							} /* End of Secondary Nav Dropdown */
+
+							& > .nav-v2-1-border-animator {
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 0;
+								height: 100%;
+								z-index: 20;
+								transition: $animations-duration;
+								background-color: map-get($theme-colors, tertiary);
+							}
+							& > a {
+								display: block;
+								padding: 0.75rem 1.5rem;
+								color: #232323;
+							}
+							&:hover {
+								& > .nav-v2-1-border-animator {
+									width: 4px;
+								}
+								& > a {
+									color: #5C5C5C !important;
+								}
+							}
+							/* Styling for Hovered Class addition via JavaScript */
+							&.is-hovered {
+								& > .nav-v2-1-dropdown-2 {
+									display: block;
+									&.right {
+										animation: fade-in-from-right-dropdown-menu;
+										animation-duration: $animations-duration;
+										animation-fill-mode: forwards;
+									}
+									&.left {
+										animation: fade-in-from-left-dropdown-menu;
+										animation-duration: $animations-duration;
+										animation-fill-mode: forwards;
+									}
+								}
+							}
+						}
+					} /* End of First Nav Dropdown */
+
+					& > .nav-v2-1-load-line {
+						background-color: map-get($theme-colors, secondary);
+						transition: width $animations-duration;
+						height: 4px;
+						width: 0%;
+					}
+
+					& > a {
+						display: inline-flex;
+						align-items: center;
+						padding: 0.75rem 0;
+						width: 100%;
+						justify-content: center;	
+						& > .nav-v2-1-spin-chevron {
+							margin-left: 6px;
+							& > i {
+								transition: transform $animations-duration;
+								transform: rotate(0deg);
+								font-size: 0.8rem;
+							}
+						}
+					}
+
+					/* Styling for Hovered Class addition via JavaScript */
+					&.is-hovered {
+						& > .nav-v2-1-dropdown {
+							display: block;
+							animation: fade-in-dropdown-menu;
+							animation-duration: $animations-duration;
+							animation-fill-mode: forwards;
+						}
+						& > .nav-v2-1-load-line {
+							width: 100%;
+						}
+						& > a > .nav-v2-1-spin-chevron > i {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Set to Display None after Break-XL Sizing *************************************************** */
+
+@media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {
+	#lg-nav-v2-1 {
+		display: none;
+	}
+}
+
+/* ********************************************************************************************* */

@@ -1,0 +1,6 @@
+{
+	"pluginName":"OG Element Injector",
+	"pluginDescription":"Will crawl a page when it is rendered for an H1 and the first image and set them as OG meta elements in the HTML head. If an image is found with og-image attribute set, then that image is set.",
+	"pluginAuthor":"Garet C. Green",
+	"pluginVersion":"1.2.0"
+}

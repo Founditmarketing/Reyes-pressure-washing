@@ -1,0 +1,126 @@
+* {
+    white-space: normal;
+}
+a[href^=tel] {
+    text-decoration: none;
+    color: inherit;
+}
+a {
+    cursor: pointer;
+    color: white;
+    &:hover {
+        text-decoration: none;
+        color: map-get($theme-colors, "secondary") !important;
+    }
+}
+a.skip-main {
+    position: absolute;
+    top: auto;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+    &:focus, &:active {
+        background-color: #000000;
+        color: #FFFFFF;
+        top: auto;
+        left: auto;
+        width: 30%;
+        height: auto;
+        overflow: auto;
+        margin: 10px 35%;
+        padding: 5px;
+        border-radius: 15px;
+        border: 4px solid yellow;
+        text-align: center;
+        font-size: 1.2rem;
+        z-index: 999;
+    }
+}
+img, iframe, video {
+    max-width: 100%;
+}
+h1, h2, h4, h5 {
+	font-family: $font-prime;
+}
+p, ul, ul li, ul li a, ol, ol li, ol li a {
+	font-family: $font-third;
+	font-size: 0.9rem;
+}
+.f-prime {
+    font-family: $font-prime !important;
+}
+.f-second {
+    font-family: $font-second !important;
+}
+.f-third {
+    font-family: $font-third !important;
+}
+.text-shadow {
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.checkmark-li, .dashed-li, .squared-li, .icon-li, .icon-no, .test-li {
+    font-family: $font-third;
+    font-weight: normal;
+    font-size: 0.9rem;
+    list-style-type: none;
+    padding: 0;
+    &::before {
+        display: inline-block;
+    }
+    li {
+        &::before {
+            text-decoration: none;
+            padding-right: 0.5rem;
+            speak: none;
+        }
+    }
+}
+.checkmark-li {
+    li {
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: '\f00c';
+        }
+    }
+}
+.dashed-li {
+    li {
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: '\f773';
+        }
+    }
+}
+.squared-li {
+    li {
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: '\f0fe';
+        }
+    }
+}
+.icon-li {
+    li {
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: '\f043';
+        }
+    }
+}
+
+.req-num, .req-form {
+	color: map-get($theme-colors, "tertiary") !important;
+    transition: all 0.5s ease;
+	&:hover {
+		color: map-get($theme-colors, "secondary") !important;
+	}
+}
+.call-num, .req-serv {
+	color: map-get($theme-colors, "secondary") !important;
+    transition: all 0.5s ease;
+	&:hover {
+		color: map-get($theme-colors, "tertiary") !important;
+	}
+}

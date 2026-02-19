@@ -1,0 +1,19 @@
+$positions: "top", "center", "bottom", "left", "right";
+
+.bg-picture-container {
+    position: relative;
+}
+
+.bg-picture {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@each $position in $positions {
+    .bg-picture-#{$position} {
+        @extend .bg-picture;
+        object-position: #{$position};
+    }
+}

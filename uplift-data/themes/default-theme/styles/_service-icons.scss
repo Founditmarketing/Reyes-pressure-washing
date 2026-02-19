@@ -1,0 +1,6 @@
+.service-icon {
+    transition: transform 0.5s ease;
+	&:hover {
+		transform: translateY(-10px);
+	}
+}

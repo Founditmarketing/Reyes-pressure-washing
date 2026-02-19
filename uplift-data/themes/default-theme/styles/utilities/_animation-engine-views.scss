@@ -1,0 +1,35 @@
+.animated-expand-container{
+	position:relative;
+	display:inline-block;
+	& .cover{
+		width:100%;
+		height:100%;
+		position:absolute;
+		right:0;
+		z-index:2;
+		top:0;
+	}
+}
+
+.animated-pop-in{
+	transform:scale(0);
+}
+
+.animated-fade-in-left{
+	transform:translateX(-100px);
+	opacity:0;
+}
+
+.animated-fade-in-right{
+	transform:translateX(100px);
+	opacity:0;
+}
+
+.wave-overlay{
+	fill:white;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:3;
+}

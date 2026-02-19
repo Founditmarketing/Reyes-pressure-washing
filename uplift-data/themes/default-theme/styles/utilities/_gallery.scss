@@ -1,0 +1,29 @@
+a[data-lightbox] img {
+	margin-bottom: .25rem;
+	width:150px;
+	height:150px;
+}
+
+.gallery-grid{
+	display:grid;
+	grid-gap:10px;
+	grid-template-areas:	". . . . . c c"
+							". . . . . c c";
+	& > :nth-child(1){
+		grid-area:c;
+	}
+	& img{
+		width:100% !important;
+		height:100% !important;
+	}
+}
+
+@media screen and (max-width:map-get($grid-breakpoints, xl)){
+	.gallery-grid{
+		display:block;
+		& > a{
+			display:inline-block;
+			padding:10px;
+		}
+	}
+}

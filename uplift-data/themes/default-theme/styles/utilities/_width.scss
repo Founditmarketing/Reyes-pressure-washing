@@ -1,0 +1,7 @@
+@each $breakpoint, $pixel-value in $grid-breakpoints{
+	@media screen and (min-width: $pixel-value){
+		.w-#{$breakpoint}-100 {
+			width: 100% !important;
+		}
+	}
+}

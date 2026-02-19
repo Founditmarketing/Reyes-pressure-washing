@@ -1,0 +1,14 @@
+@each $color, $value in $theme-colors {
+	.border-bottom-#{$color} {
+		border-bottom:$theme-borders-width solid #{$value};
+	}
+	.border-top-#{$color} {
+		border-top:$theme-borders-width solid #{$value};
+	}
+	.border-left-#{$color} {
+		border-left:$theme-borders-width solid #{$value};
+	}
+	.border-right-#{$color} {
+		border-right:$theme-borders-width solid #{$value};
+	}
+}

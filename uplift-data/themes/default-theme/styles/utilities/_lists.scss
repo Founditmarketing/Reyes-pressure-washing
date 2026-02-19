@@ -1,0 +1,46 @@
+@mixin check-variant($themeColor){
+	@extend .list-group;
+	@extend .list-group-flush;
+	list-style:none;
+	& li::before{
+		display:inline-block;
+		font-family:"Font Awesome 5 Free";
+		color:white;
+		font-size:90%;
+		padding:map-get($spacers, 1);
+		content:"";
+		background-color:$themeColor;
+		border-radius:5px;
+		margin-right:map-get($spacers, 2);
+	}
+	& li{
+		@extend .list-group-item;
+		background-color:unset;
+	}
+
+	& li:not(:last-child){
+		border-bottom:1px
+	}
+}
+
+@mixin arrow-variant($themeColor){
+	list-style: none;
+	padding-inline-start: .5rem;
+	& li::before{
+		font-family: "Font Awesome 5 Free";
+		color: $themeColor;
+		font-size: 100%;
+		padding: 0.2rem;
+		content: "";
+		margin-right: 0.2rem;
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.checks-#{$color} {
+		@include check-variant($value);
+	}
+	.arrow-#{$color} {
+		@include arrow-variant($value);
+	}
+}

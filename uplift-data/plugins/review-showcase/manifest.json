@@ -1,0 +1,6 @@
+{
+	"pluginName":"Review Showcase",
+	"pluginDescription":"This tool allows for fetching parts of reviews, such as body content.",
+	"pluginAuthor":"Henrik Persson",
+	"pluginVersion":"1.0.0"
+}

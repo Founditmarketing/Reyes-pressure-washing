@@ -1,0 +1,75 @@
+/* ******************************************************************************************** */
+/* CAROUSEL STYLING *************************************************************************** */
+/* ******************************************************************************************** */
+
+.carousel-item > div {
+	background-attachment: scroll;
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+	@include media-breakpoint-down(lg) {
+		height: 600px;
+	}
+	@include media-breakpoint-down(md) {
+		height: 500px;
+	}
+	@include media-breakpoint-down(sm) {
+		height: 400px;
+	}
+}
+.carousel-item {
+	padding: 10px;
+}
+
+/* ******************************************************************************************** */
+
+/* secondary fly in text uncomment this and comment/delete above
+
+@keyframes bannjump {
+	from {
+		transform:translateX(-100%);
+	}
+	to {
+		transform:translateX(0);
+	}
+}
+
+.carousel-item > div {
+	background-attachment: scroll;
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+	@include media-breakpoint-down(lg) {
+		height: 600px;
+	}
+	@include media-breakpoint-down(md) {
+		height: 500px;
+	}
+}
+.carousel-item {
+	padding: 10px;
+}
+.carousel-caption {
+	left:0 !important;
+	right:0 !important;
+	width:100% !important;
+	bottom:0 !important;
+}
+.carousel-item {
+	overflow-x:hidden !important;
+	.carousel-caption{
+		transform: translateX(-100%);
+		.darken {
+			background:rgba(0,0,0,.5);
+		}
+	}
+	&.active {
+		.carousel-caption {
+			animation:bannjump;
+			animation-timing-function: ease;
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+	}
+}
+******************************************/

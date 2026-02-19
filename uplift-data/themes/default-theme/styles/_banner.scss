@@ -1,0 +1,63 @@
+/* NOTE: RUNNING FIXED HEADER HEAD MAKES THE MOST SENSE FOR THIS BANNER */
+.carousel-item {
+	.bg-picture-container {
+		&.interior {
+			height:200px !important;
+		}
+		height:90vh;
+		@media screen and (max-width:1025px) {
+			height:700px;
+		}
+	}
+	.carousel-caption {
+		height:100%;
+		width:100%;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		@include media-breakpoint-down(md) {
+			width:90%;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}	
+	.overlay1 {
+		background:rgba(map-get($theme-colors, "dark"),.3);
+		height:100%;
+		width:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+	}
+	.overlay2 {
+		background:map-get($theme-colors, "primary");
+		height:100%;
+		width:50%;
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:3;
+		clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+	}
+	.overlay3 {
+		background:rgba(map-get($theme-colors, "secondary"), .4);
+		height:100%;
+		width:55%;
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:2;
+		clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+		
+	}
+	.form-container {
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		border-top:3px solid map-get($theme-colors, "secondary");
+	}
+}
+
+.carousel-item {
+	padding: 10px;
+}

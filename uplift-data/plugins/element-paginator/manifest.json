@@ -1,0 +1,6 @@
+{
+	"pluginName":"Bootstrap Paginator",
+	"pluginDescription":"Uses Bootstrap columns to paginate elements inside a container with 'paginate' as an attribute.",
+	"pluginAuthor":"Garet C. Green",
+	"pluginVersion":"1.0.0"
+}

@@ -1,0 +1,43 @@
+/* ******************************************************************************************** */
+/* FOOTER STYLING ***************************************************************************** */
+/* ******************************************************************************************** */
+
+footer.fb-ftr-1 {
+    background-color: darken(map-get($theme-colors, "light"), 3%);
+    font-family: $font-third;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #333;
+}
+footer.fb-ftr-1 h4 {
+    font-family: $font-prime;
+    font-weight: normal;
+    color: map-get($theme-colors, "primary");
+}
+footer.fb-ftr-1 a {
+    font-family: $font-third;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: $color-prime;
+    transition: all 0.5s ease;
+    &:hover {
+        color: map-get($theme-colors, "secondary");
+    }
+}
+.fb-ftr-1 .quick-links a {
+    display: block;
+}
+.fb-ftr-1 .service-areas a {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    padding-right: 6px;
+}
+.fb-ftr-1 .service-areas a:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+.fb-ftr-1 .contact p {
+    padding: 0;
+    margin: 0;
+}
+
+/* ******************************************************************************************** */

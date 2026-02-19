@@ -1,0 +1,57 @@
+Checking system requirements.
+System requirements checks all passed.
+Found block in current htaccess that changes the PHP version. Storing this for later.
+GitHub response is: {
+  "url": "https://api.github.com/repos/footbridge-media-development/Footbridge-CMS/releases/123881316",
+  "assets_url": "https://api.github.com/repos/footbridge-media-development/Footbridge-CMS/releases/123881316/assets",
+  "upload_url": "https://uploads.github.com/repos/footbridge-media-development/Footbridge-CMS/releases/123881316/assets{?name,label}",
+  "html_url": "https://github.com/footbridge-media-development/Footbridge-CMS/releases/tag/4.0.47",
+  "id": 123881316,
+  "author": {
+    "login": "nox7",
+    "id": 17110935,
+    "node_id": "MDQ6VXNlcjE3MTEwOTM1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/17110935?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/nox7",
+    "html_url": "https://github.com/nox7",
+    "followers_url": "https://api.github.com/users/nox7/followers",
+    "following_url": "https://api.github.com/users/nox7/following{/other_user}",
+    "gists_url": "https://api.github.com/users/nox7/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/nox7/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/nox7/subscriptions",
+    "organizations_url": "https://api.github.com/users/nox7/orgs",
+    "repos_url": "https://api.github.com/users/nox7/repos",
+    "events_url": "https://api.github.com/users/nox7/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/nox7/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "node_id": "RE_kwDODAKAns4HYkdk",
+  "tag_name": "4.0.47",
+  "target_commitish": "master",
+  "name": "v4.0.47",
+  "draft": false,
+  "prerelease": false,
+  "created_at": "2023-10-05T14:42:18Z",
+  "published_at": "2023-10-05T14:42:45Z",
+  "assets": [
+
+  ],
+  "tarball_url": "https://api.github.com/repos/footbridge-media-development/Footbridge-CMS/tarball/4.0.47",
+  "zipball_url": "https://api.github.com/repos/footbridge-media-development/Footbridge-CMS/zipball/4.0.47",
+  "body": "## What's Changed\r\n* Implements og:url meta element on all pages by @nox7 in https://github.com/footbridge-media-development/Footbridge-CMS/pull/919\r\n\r\n\r\n**Full Changelog**: https://github.com/footbridge-media-development/Footbridge-CMS/compare/4.0.46...4.0.47",
+  "mentions_count": 1
+}
+
+Fetched zip URL for v4 build successfully. Proceeding to download v4 from zip URL.
+Downloaded zip. Storing as temporary file.
+Zip file saved. Opening zip file and installing v4.
+Successfully opened v4 payload via ZipArchive.
+Installed v4. Remove Uplift v4 zip file package. Fetching conversion script from GitHub.
+Original htaccess file had a Mime block to change the PHP version. Appending this to the new htaccess.
+Fetched zip URL for v3->v4 conversion script successfully. Proceeding to download script payload from zip URL.
+Downloaded conversion script zip. Storing as temporary file.
+Zip file saved. Opening zip file and installing v4.
+Writing the conversion script to file v3-v4-conversion-script.php
+Conversion script written to file. Running 'include' on the file to finish v3->v4 update and conversion.

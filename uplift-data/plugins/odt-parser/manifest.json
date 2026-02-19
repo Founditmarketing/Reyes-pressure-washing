@@ -1,0 +1,6 @@
+{
+	"pluginName":"ODT Parser",
+	"pluginDescription":"A tool to parse ODT files into HTML and data that can be used to quickly build CMS pages from the file source.",
+	"pluginAuthor":"Garet C. Green",
+	"pluginVersion":"1.0.2"
+}
