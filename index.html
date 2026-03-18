@@ -154,15 +154,17 @@
   .section-sub { text-align: center; color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 50px; }
 
   /* ── ABOUT STRIP ── */
-  #about { background: var(--light); }
+  #about { background: linear-gradient(to bottom, #0057B8 0%, #1a6fd4 30%, #d0e8ff 65%, var(--light) 100%); }
   .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-  .about-inner p { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 16px; }
+  #about .section-title { color: var(--white); }
+  #about .section-title span { color: var(--yellow); }
+  .about-inner p { font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.92); margin-bottom: 16px; }
   .btn-outline {
-    display: inline-block; border: 2px solid var(--blue); color: var(--blue);
+    display: inline-block; border: 2px solid var(--white); color: var(--white);
     padding: 12px 32px; border-radius: 50px; font-weight: 800; font-size: 1rem;
     margin-top: 16px; transition: background 0.2s, color 0.2s;
   }
-  .btn-outline:hover { background: var(--blue); color: var(--white); }
+  .btn-outline:hover { background: var(--white); color: var(--blue); }
 
   /* ── SERVICES ── */
   #services { background: var(--white); }
@@ -403,7 +405,7 @@
   </div>
   <div class="hero-wave">
     <svg viewBox="0 0 600 49.2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#F0F8FF">
+      <path fill="#0057B8">
         <animate attributeName="d" dur="6000ms" repeatCount="indefinite"
           values="
             M600,49.2H0V33.9c0,0,82.7-28,150-28s79.8,28,150,28s64.4,0,150,0s150,0,150,0V49.2z;
@@ -417,12 +419,7 @@
   </div>
 </section>
 
-<!-- WAVE -->
-<div class="wave-divider">
-  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,48 C240,80 480,0 720,40 C960,80 1200,20 1440,48 L1440,80 L0,80 Z" fill="#F0F8FF"/>
-  </svg>
-</div>
+
 
 <!-- ABOUT -->
 <section id="about" class="section">
