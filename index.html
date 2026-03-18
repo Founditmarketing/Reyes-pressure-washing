@@ -48,7 +48,7 @@
     padding: 8px 24px; display: flex; justify-content: space-between; align-items: center;
     font-size: 0.85rem; font-weight: 700;
   }
-  #topbar a { color: var(--yellow); }
+  #topbar a.tel-link { color: var(--yellow); font-weight: 800; }
   #topbar .cta-btn {
     background: var(--yellow); color: var(--navy); padding: 6px 18px;
     border-radius: 50px; font-weight: 800; font-size: 0.85rem;
@@ -134,15 +134,11 @@
     font-size: 1.3rem; letter-spacing: 1px; transition: background 0.2s, color 0.2s;
   }
   .btn-hero-secondary:hover { background: var(--cyan); color: var(--navy); }
-  /* water drops animation */
-  .drops { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-  .drop {
-    position: absolute; width: 6px; height: 16px;
-    background: linear-gradient(to bottom, rgba(0,201,255,0.7), transparent);
-    border-radius: 50%; animation: fallDrop linear infinite;
-    opacity: 0;
+  /* ── HERO WAVE ── */
+  .hero-wave {
+    position: absolute; bottom: 0; left: 0; width: 100%; z-index: 1; line-height: 0;
   }
-  @keyframes fallDrop { 0%{opacity:0;transform:translateY(-20px)} 10%{opacity:1} 90%{opacity:0.3} 100%{opacity:0;transform:translateY(100vh)} }
+  .hero-wave svg { display: block; width: 100%; }
 
   /* ── WAVE DIVIDER ── */
   .wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }
@@ -204,7 +200,7 @@
   .area-text p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; line-height: 1.7; }
   .cities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin-bottom: 28px; }
   .city-item { font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
-  .city-item::before { content: '💧'; font-size: 0.85rem; }
+  .city-item i { color: var(--cyan); font-size: 0.8rem; }
   .btn-area {
     display: inline-block; background: var(--yellow); color: var(--navy);
     padding: 14px 32px; border-radius: 50px; font-family: 'Bebas Neue', sans-serif;
@@ -388,23 +384,36 @@
   <a href="/projects">Photos</a>
   <a href="/pressure-washing-tips">Tips</a>
   <a href="/contact-us">Contact</a>
-  <a href="tel:+1-281-683-0111" style="color:var(--yellow);margin-top:12px;">📞 Call: 281-683-0111</a>
+  <a href="tel:+1-281-683-0111" style="color:var(--yellow);margin-top:12px;"><i class="fas fa-phone"></i> Call: 281-683-0111</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
   <div id="hero-bg"></div>
-  <div class="drops" id="drops-container"></div>
   <div class="hero-content">
-    <div class="hero-badge">🚿 Houston's Favorite Pressure Washers</div>
+    <div class="hero-badge">Houston's Favorite Pressure Washers</div>
     <h1>LOOK BETTER<br><span>THAN THE</span><br>NEIGHBORS!</h1>
     <p class="hero-sub">Reyes Pressure Washing — fast, safe, and satisfying results every time. Call us for your FREE quote today!</p>
     <div class="hero-btns">
       <a href="tel:+1-281-683-0111" class="btn-hero-primary" onclick="gtag&&gtag('event','click',{event_category:'PhoneEvent',event_action:'Tap',event_label:'PhoneCall'})">
-        📞 Call: 281-683-0111
+        <i class="fas fa-phone"></i> Call: 281-683-0111
       </a>
       <a href="/contact-us" class="btn-hero-secondary">Get A Free Online Quote</a>
     </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 600 49.2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#F0F8FF">
+        <animate attributeName="d" dur="6000ms" repeatCount="indefinite"
+          values="
+            M600,49.2H0V33.9c0,0,82.7-28,150-28s79.8,28,150,28s64.4,0,150,0s150,0,150,0V49.2z;
+            M600,49.2H0V33.9c0,0,82.7-1,150-1s79.8-18,150-18s64.4,19,150,19s150,0,150,0V49.2z;
+            M600,49.2H0V33.9c0,0,82.7-1,150-1s79.8,1,150,1s64.4-31,150-31s150,31,150,31V49.2z;
+            M600,49.2H0V33.9c0,0,82.7-1,150-1s79.8-18,150-18s64.4,19,150,19s150,0,150,0V49.2z;
+            M600,49.2H0V33.9c0,0,82.7-28,150-28s79.8,28,150,28s64.4,0,150,0s150,0,150,0V49.2z;"
+        />
+      </path>
+    </svg>
   </div>
 </section>
 
@@ -434,7 +443,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/services/house-washing-houston.jpg" alt="House Washing Houston" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🏠</div>
         <h3>House Washing</h3>
         <p>Using safe but effective methods, we'll restore the curb appeal your home once had and remove potentially harmful contaminants. Let's make your home look brand new.</p>
         <a href="/house-washing" class="btn-card">Find Out More →</a>
@@ -444,7 +452,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/services/roof-cleaning-houston.jpg" alt="Roof Cleaning Houston" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🏗️</div>
         <h3>Roof Cleaning</h3>
         <p>Keep your rooftop in tiptop condition with routine roof cleaning. Our team cleans your roof safely with no damages and proactive maintenance.</p>
         <a href="/roof-cleaning" class="btn-card">Find Out More →</a>
@@ -454,7 +461,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/services/driveway-washing-houston.jpg" alt="Driveway Washing Houston" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🛣️</div>
         <h3>Driveway Washing</h3>
         <p>Don't let a dirty driveway detract from the curb appeal of your dream home. Keep conditions safe and restore its beauty with professional driveway cleaning.</p>
         <a href="/driveway-washing" class="btn-card">Find Out More →</a>
@@ -464,7 +470,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/services/sidewalk-cleaning-houston.jpg" alt="Sidewalk Cleaning Houston" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🚶</div>
         <h3>Sidewalk Cleaning</h3>
         <p>Residential walkways look great and stay safe when they're kept clean. Our professional sidewalk cleaning makes sure that's always possible.</p>
         <a href="/sidewalk-cleaning" class="btn-card">Find Out More →</a>
@@ -474,7 +479,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/services/patio-washing-houston.jpg" alt="Patio Washing Houston" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🌿</div>
         <h3>Patio Washing</h3>
         <p>Get your outdoor living space summer-ready! Exterior cleaning could be the one thing standing between a perfect patio or an unusable one.</p>
         <a href="/patio-washing" class="btn-card">Find Out More →</a>
@@ -484,7 +488,6 @@
     <div class="service-card reveal">
       <div class="service-card-img"><img src="/uplift-data/images/layout/services/gutters.jpg" alt="Gutter Cleaning" loading="lazy"></div>
       <div class="service-card-body">
-        <div class="service-card-emoji">🌧️</div>
         <h3>Gutter Cleaning</h3>
         <p>Keep your gutters looking great and flowing even better. Power washing is an effective way to clean gutters when handled by industry specialists.</p>
         <a href="/gutter-cleaning" class="btn-card">Find Out More →</a>
@@ -501,16 +504,16 @@
       <h2>TOWNS WE WASH</h2>
       <p>At Reyes Pressure Washing, we offer the most effective and safest pressure washing at a competitive and fair price! We serve several surrounding communities — call us for inquiries or a free quote.</p>
       <div class="cities-grid">
-        <div class="city-item">Houston</div>
-        <div class="city-item">Baytown</div>
-        <div class="city-item">Pearland</div>
-        <div class="city-item">Alvin</div>
-        <div class="city-item">League City</div>
-        <div class="city-item">Atascocita</div>
-        <div class="city-item">Kingwood</div>
-        <div class="city-item">Friendswood</div>
-        <div class="city-item">Mont Belvieu</div>
-        <div class="city-item">Humble</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Houston</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Baytown</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Pearland</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Alvin</div>
+        <div class="city-item"><i class="fas fa-tint"></i> League City</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Atascocita</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Kingwood</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Friendswood</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Mont Belvieu</div>
+        <div class="city-item"><i class="fas fa-tint"></i> Humble</div>
       </div>
       <a href="/near-me" class="btn-area">Find Out More →</a>
     </div>
@@ -541,26 +544,62 @@
   <div class="projects-grid">
 
     <div class="project-card reveal">
-      <img src="/uplift-data/images/projects/siding-washing-in-crosby-t/cover-photo.jpeg" alt="Siding Washing in Crosby TX" loading="lazy">
+      <img src="/uplift-data/images/Projects/siding-washing-in-crosby-t/cover-photo.jpeg" alt="Siding Washing in Crosby TX" loading="lazy">
       <div class="project-card-body">
         <h3>Siding Washing in Crosby, TX</h3>
-        <p>A complete transformation for this home's exterior. Using our professional soft wash method, we safely cleaned hardy plank siding, removing years of built-up mold, mildew, and grime.</p>
-        <a href="/projects/siding-washing-in-crosby-tx-dramatic-before-after" class="btn-card">See the Results →</a>
+        <p>A complete transformation for this home's exterior. Using soft wash method, we safely cleaned hardy plank siding, removing years of mold, mildew, and grime.</p>
+        <a href="/projects/siding-washing-in-crosby-tx-dramatic-before-after" class="btn-card">See the Results</a>
       </div>
     </div>
 
     <div class="project-card reveal">
-      <img src="/uplift-data/images/projects/roof-wash-in-montgomery/cover-photo.jpeg" alt="Roof Wash in Montgomery" loading="lazy">
+      <img src="/uplift-data/images/Projects/roof-wash-in-montgomery/cover-photo.jpeg" alt="Roof Wash in Montgomery" loading="lazy">
       <div class="project-card-body">
         <h3>Roof Wash in Montgomery</h3>
-        <p>We soft washed a big metal roof. The key to soft washing metal roofs is to keep it wet, put multiple coats on, and rinse thoroughly!</p>
-        <a href="/projects/roof-wash-in-montgomery" class="btn-card">See the Results →</a>
+        <p>We soft washed a large metal roof. The key: keep it wet, apply multiple coats, and rinse thoroughly for a spotless result.</p>
+        <a href="/projects/roof-wash-in-montgomery" class="btn-card">See the Results</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="/uplift-data/images/Projects/concrete-cleaning-crosby-high-school/cover-photo.jpg" alt="Concrete Cleaning Crosby High School" loading="lazy">
+      <div class="project-card-body">
+        <h3>Concrete Cleaning — Crosby High School</h3>
+        <p>A large-scale commercial concrete cleaning at Crosby High School. We restored walkways and surfaces to like-new condition.</p>
+        <a href="/projects/concrete-cleaning-crosby-high-school" class="btn-card">See the Results</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="/uplift-data/images/Projects/house-wash-in-crosby-tx/house-wash-in-crosby-tx-001.jpg" alt="House Wash in Crosby TX" loading="lazy">
+      <div class="project-card-body">
+        <h3>House Wash in Crosby, TX</h3>
+        <p>Full exterior house washing restoring this home's original brightness, removing mildew and staining from the siding and trim.</p>
+        <a href="/projects/house-wash-in-crosby-tx" class="btn-card">See the Results</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="/uplift-data/images/Projects/house-deck-and-concrete-cleaning-in-mont-belview-tx/house-deck-and-concrete-cleaning-in-mont-belview-tx-001.jpg" alt="House Deck and Concrete Cleaning Mont Belvieu" loading="lazy">
+      <div class="project-card-body">
+        <h3>House, Deck & Concrete — Mont Belvieu</h3>
+        <p>Complete exterior package: house washing, deck restoration, and concrete cleaning for a stunning curb appeal transformation.</p>
+        <a href="/projects/house-deck-and-concrete-cleaning-in-mont-belview-tx" class="btn-card">See the Results</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="/uplift-data/images/Projects/storage-facility-cleaning-1.jpg" alt="Storage Facility Cleaning Nederland TX" loading="lazy">
+      <div class="project-card-body">
+        <h3>Storage Facility Cleaning — Nederland, TX</h3>
+        <p>Commercial pressure washing of an entire storage facility, removing years of buildup from driveways, units, and exterior walls.</p>
+        <a href="/projects/storage-facility-cleaning-nederland-tx" class="btn-card">See the Results</a>
       </div>
     </div>
 
   </div>
   <div class="view-all-wrap reveal">
-    <a href="/projects" class="btn-view-all">View All Projects 🖼️</a>
+    <a href="/projects" class="btn-view-all">View All Projects</a>
   </div>
 </section>
 
@@ -592,7 +631,7 @@
   <div class="cta-buttons reveal">
     <a href="/contact-us" class="btn-cta-white">Get a Free Estimate</a>
     <a href="tel:+1-281-683-0111" class="btn-cta-outline" onclick="gtag&&gtag('event','click',{event_category:'PhoneEvent',event_action:'Tap',event_label:'PhoneCall'})">
-      📞 Give Us a Call Today!
+      <i class="fas fa-phone"></i> Give Us a Call Today!
     </a>
   </div>
 </section>
@@ -632,7 +671,7 @@
       <h4>Contact</h4>
       <p>Reyes Pressure Washing</p>
       <p>115 Commerce Ln<br>Highlands, TX 77562</p>
-      <a href="tel:+1-281-683-0111" style="color:var(--yellow);font-weight:800;margin-top:12px;font-size:1.1rem;">📞 281-683-0111</a>
+      <a href="tel:+1-281-683-0111" style="color:var(--yellow);font-weight:800;margin-top:12px;font-size:1.1rem;"><i class="fas fa-phone"></i> 281-683-0111</a>
       <a href="/contact-us" style="margin-top:12px;display:inline-block;background:var(--yellow);color:var(--navy);padding:10px 24px;border-radius:50px;font-weight:800;">Get a Free Quote</a>
     </div>
   </div>
@@ -660,21 +699,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // WATER DROP ANIMATION
-  const container = document.getElementById('drops-container');
-  if (container) {
-    for (let i = 0; i < 24; i++) {
-      const drop = document.createElement('div');
-      drop.className = 'drop';
-      drop.style.left = Math.random() * 100 + '%';
-      drop.style.top = '-20px';
-      drop.style.animationDuration = (2 + Math.random() * 4) + 's';
-      drop.style.animationDelay = (Math.random() * 5) + 's';
-      drop.style.width = (4 + Math.random() * 6) + 'px';
-      drop.style.height = (12 + Math.random() * 16) + 'px';
-      container.appendChild(drop);
-    }
-  }
 
   // STAGGER SERVICE CARDS
   document.querySelectorAll('.service-card, .project-card').forEach((card, i) => {
