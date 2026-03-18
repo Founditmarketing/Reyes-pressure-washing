@@ -59,110 +59,112 @@
 <meta name="description" itemprop="description" property="og:description" content="Reyes Pressure Washing is the premier choice in Friendswood for pressure washing. Call 281-683-0111 after you've reviewed some pictures of our highly successful previous projects."><meta property="og:title" content="View The Latest Pressure Washing Projects By Reyes Pressure Washing"><meta property="og:url" content="https://www.reyespw.com//projects">	<link rel="stylesheet" href="/uplift-assets/front-end-injections/css/simple-lightbox.css">
 <script type="module" src="/uplift-assets/front-end-injections/js/simple-lightbox.js"></script>
 <script type="module" src="/uplift-assets/front-end-injections/js/init-simple-lightbox.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/uplift-assets/redesign.css">
+  <style>
+    body,body.interior-page{font-family:'Montserrat',sans-serif;margin:0;background:#F0F6FD;}
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,#0D1B2A 0%,#0057B8 100%);position:relative;overflow:hidden;min-height:260px;display:flex;align-items:center;}
+    .page-hero .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;}
+    .page-hero .ph-inner{position:relative;z-index:2;padding:60px 48px;max-width:1100px;margin:0 auto;width:100%;}
+    .page-hero .breadcrumb-row{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
+    .page-hero .breadcrumb-row a{color:rgba(255,255,255,.7);font-size:.82rem;font-weight:600;text-decoration:none;}
+    .page-hero .breadcrumb-row a:hover{color:#F5BA18;}
+    .page-hero .breadcrumb-row span{color:rgba(255,255,255,.35);margin:0 3px;}
+    .page-hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin:0 0 10px;line-height:1.15;}
+    .page-hero .hero-sub{color:#00AEEF;font-size:1rem;font-weight:700;max-width:600px;margin:0;}
+    /* SECTIONS */
+    .pg-section{padding:56px 32px;}
+    .pg-section.white{background:#fff;}
+    .pg-section.light{background:#F0F6FD;}
+    .pg-section.blue{background:linear-gradient(135deg,#0057B8,#003d85);border-top:4px solid #00AEEF;}
+    .pg-inner{max-width:1100px;margin:0 auto;}
+    .section-title{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;color:#0D1B2A;margin:0 0 8px;}
+    .section-sub{color:#6b7280;font-size:1rem;margin:0 0 36px;}
+    /* BENEFIT CARDS */
+    .benefit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+    .benefit-card{background:#fff;border:2px solid #d0e2f0;border-radius:14px;padding:28px 24px;transition:border-color .2s,box-shadow .2s;}
+    .benefit-card:hover{border-color:#00AEEF;box-shadow:0 8px 28px rgba(0,174,239,.12);}
+    .benefit-icon{font-size:1.8rem;color:#0057B8;margin-bottom:12px;}
+    .benefit-card h3{font-size:.95rem;font-weight:800;color:#0D1B2A;margin:0 0 8px;}
+    .benefit-card p{font-size:.88rem;color:#6b7280;line-height:1.65;margin:0;}
+    /* TWO COL */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+    .two-col img{width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.12);object-fit:cover;height:360px;}
+    .two-col p,.two-col h2,.two-col h3{color:#0D1B2A;}
+    .two-col p{color:#374151;line-height:1.8;margin:12px 0 24px;}
+    /* PHOTO GRID */
+    .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+    .photo-card{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/3;}
+    .photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .35s;}
+    .photo-card:hover img{transform:scale(1.05);}
+    .photo-label{position:absolute;bottom:0;left:0;right:0;padding:18px 14px 12px;background:linear-gradient(transparent,rgba(13,27,42,.82));color:#fff;font-weight:700;font-size:.85rem;}
+    /* SERVICE CARDS */
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
+    .svc-card{background:#fff;border:2px solid #d0e2f0;border-radius:14px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;}
+    .svc-card:hover{transform:translateY(-6px);border-color:#00AEEF;box-shadow:0 12px 36px rgba(0,174,239,.14);}
+    .svc-card img{width:100%;height:200px;object-fit:cover;display:block;}
+    .svc-body{padding:22px 20px;}
+    .svc-body h3{font-size:1.05rem;font-weight:800;color:#0D1B2A;margin:0 0 8px;}
+    .svc-body p{font-size:.88rem;color:#6b7280;line-height:1.6;margin:0 0 14px;}
+    .svc-link{display:inline-block;background:#0057B8;color:#fff;padding:9px 22px;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;transition:background .2s;}
+    .svc-link:hover{background:#00AEEF;color:#fff;}
+    /* AREA GRID */
+    .area-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;}
+    .area-pill{background:#fff;border:2px solid #d0e2f0;border-radius:50px;padding:12px 20px;text-align:center;font-weight:700;color:#0D1B2A;font-size:.9rem;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;}
+    .area-pill:hover{border-color:#0057B8;color:#0057B8;}
+    .area-pill i{color:#00AEEF;font-size:.75rem;}
+    /* FAQ */
+    .faq-item{border:1px solid #d0e2f0;border-radius:12px;margin-bottom:12px;overflow:hidden;}
+    .faq-q{background:#F0F6FD;padding:16px 22px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#0D1B2A;user-select:none;gap:12px;}
+    .faq-q:hover{background:#ddeeff;}
+    .faq-q::after{content:'+';font-size:1.3rem;font-weight:300;color:#0057B8;flex-shrink:0;}
+    .faq-item.open .faq-q::after{content:'−';}
+    .faq-a{display:none;padding:16px 22px;font-size:.93rem;line-height:1.75;color:#374151;background:#fff;}
+    .faq-a a{color:#0057B8;}
+    .faq-item.open .faq-a{display:block;}
+    /* CONTACT FORM */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+    .c-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .c-form .full{grid-column:1/-1;}
+    .c-form input,.c-form textarea,.c-form select{width:100%;padding:13px 18px;border:2px solid #d0e2f0;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:.93rem;color:#1a2b3c;background:#fff;transition:border-color .2s;box-sizing:border-box;}
+    .c-form input:focus,.c-form textarea:focus{outline:none;border-color:#0057B8;}
+    .c-form textarea{min-height:130px;resize:vertical;}
+    .c-form button{background:#F5BA18;color:#0D1B2A;border:none;padding:14px 36px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:transform .2s,box-shadow .2s;justify-self:start;}
+    .c-form button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,186,24,.5);}
+    .c-info-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;}
+    .c-icon{background:#F0F6FD;border-radius:12px;padding:14px;color:#0057B8;font-size:1.3rem;flex-shrink:0;}
+    .c-info-item strong{display:block;font-size:.9rem;font-weight:800;color:#0D1B2A;margin-bottom:4px;}
+    .c-info-item a,.c-info-item p{color:#374151;font-size:.93rem;margin:0;line-height:1.6;text-decoration:none;}
+    .c-info-item a{color:#0057B8;font-weight:600;}
+    /* REVIEWS */
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
+    .review-card{background:#fff;border:2px solid #d0e2f0;border-radius:14px;padding:26px 24px;}
+    .review-stars{color:#F5BA18;font-size:1.1rem;margin-bottom:10px;}
+    .review-text{font-size:.93rem;color:#374151;line-height:1.7;margin:0 0 16px;font-style:italic;}
+    .review-author{font-weight:800;font-size:.88rem;color:#0D1B2A;}
+    .review-area{color:#6b7280;font-size:.82rem;}
+    /* CTA */
+    .cta-strip{text-align:center;}
+    .cta-strip h2{color:#fff;font-size:clamp(1.4rem,3vw,2.1rem);font-weight:900;margin:0 0 10px;text-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .cta-strip p{color:rgba(255,255,255,.85);margin:0 0 28px;font-size:1rem;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .cta-btn-y{background:#F5BA18;color:#0D1B2A;padding:14px 32px;border-radius:50px;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:transform .2s;text-decoration:none;}
+    .cta-btn-y:hover{transform:translateY(-2px);}
+    .cta-btn-o{border:2px solid rgba(255,255,255,.5);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:1rem;transition:border-color .2s;text-decoration:none;}
+    .cta-btn-o:hover{border-color:#00AEEF;color:#00AEEF;}
+    @media(max-width:768px){
+      .page-hero .ph-inner,.pg-section{padding:40px 18px;}
+      .two-col,.contact-grid,.c-form{grid-template-columns:1fr;}
+      .c-form .full{grid-column:1;}
+    }
+  </style>
 </head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
-body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
-/* PAGE HERO */
-.page-hero {
-  background: linear-gradient(135deg, #0D1B2A 0%, #0057B8 100%);
-  position: relative; overflow: hidden; min-height: 260px;
-  display: flex; align-items: center;
-}
-.page-hero .ph-img {
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.3;
-}
-.page-hero .ph-inner {
-  position:relative; z-index:2; padding:60px 48px; max-width:1100px; margin:0 auto; width:100%;
-}
-.page-hero .breadcrumb-row { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
-.page-hero .breadcrumb-row a { color:rgba(255,255,255,.65); font-size:.82rem; font-weight:600; }
-.page-hero .breadcrumb-row a:hover { color:#F5BA18; }
-.page-hero .breadcrumb-row span { color:rgba(255,255,255,.35); margin:0 3px; }
-.page-hero h1 { color:#fff; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:900; margin:0 0 10px; }
-.page-hero .hero-sub { color:#00AEEF; font-size:1rem; font-weight:700; max-width:600px; margin:0; }
-/* SECTION WRAPPER */
-.pg-section { padding:56px 32px; }
-.pg-section.white { background:#fff; }
-.pg-section.light { background:#F0F6FD; }
-.pg-section.dark { background:linear-gradient(135deg,#0D1B2A,#0057B8); color:#fff; border-top:4px solid #00AEEF; }
-.pg-inner { max-width:1100px; margin:0 auto; }
-.pg-section-title { font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:800; color:#0D1B2A; margin:0 0 8px; }
-.pg-section.dark .pg-section-title { color:#fff; }
-.pg-section-sub { color:#6b7280; font-size:1rem; margin:0 0 36px; }
-.pg-section.dark .pg-section-sub { color:rgba(255,255,255,.75); }
-/* BENEFIT CARDS */
-.benefit-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
-.benefit-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; padding:28px 24px; transition:border-color .2s,box-shadow .2s; }
-.benefit-card:hover { border-color:#00AEEF; box-shadow:0 8px 28px rgba(0,174,239,.12); }
-.benefit-icon { font-size:1.8rem; color:#0057B8; margin-bottom:12px; }
-.benefit-card h3 { font-size:.95rem; font-weight:800; color:#0D1B2A; margin:0 0 8px; }
-.benefit-card p { font-size:.88rem; color:#6b7280; line-height:1.65; margin:0; }
-/* TWO-COL */
-.two-col { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
-.two-col img { width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,.12); object-fit:cover; height:360px; }
-@media(max-width:768px){ .two-col { grid-template-columns:1fr; } .ph-inner { padding:44px 18px; } .pg-section { padding:40px 18px; } }
-/* PHOTO GRID */
-.photo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
-.photo-card { border-radius:12px; overflow:hidden; position:relative; aspect-ratio:4/3; }
-.photo-card img { width:100%; height:100%; object-fit:cover; transition:transform .35s; }
-.photo-card:hover img { transform:scale(1.05); }
-.photo-label { position:absolute; bottom:0; left:0; right:0; padding:18px 14px 12px; background:linear-gradient(transparent,rgba(13,27,42,.82)); color:#fff; font-weight:700; font-size:.85rem; }
-/* SERVICE LIST GRID */
-.svc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
-.svc-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; overflow:hidden; transition:transform .25s,border-color .25s,box-shadow .25s; }
-.svc-card:hover { transform:translateY(-6px); border-color:#00AEEF; box-shadow:0 12px 36px rgba(0,174,239,.14); }
-.svc-card img { width:100%; height:200px; object-fit:cover; display:block; }
-.svc-card-body { padding:22px 20px; }
-.svc-card-body h3 { font-size:1.05rem; font-weight:800; color:#0D1B2A; margin:0 0 8px; }
-.svc-card-body p { font-size:.88rem; color:#6b7280; line-height:1.6; margin:0 0 14px; }
-.svc-card-body a.svc-link { display:inline-block; background:#0057B8; color:#fff; padding:9px 22px; border-radius:50px; font-weight:700; font-size:.85rem; transition:background .2s; }
-.svc-card-body a.svc-link:hover { background:#00AEEF; }
-/* AREA GRID */
-.area-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; }
-.area-pill { background:#fff; border:2px solid #d0e2f0; border-radius:50px; padding:12px 20px; text-align:center; font-weight:700; color:#0D1B2A; font-size:.9rem; transition:border-color .2s,color .2s; display:flex; align-items:center; justify-content:center; gap:8px; }
-.area-pill:hover { border-color:#0057B8; color:#0057B8; }
-.area-pill i { color:#00AEEF; font-size:.75rem; }
-/* FAQ */
-.faq-item{border:1px solid #d0e2f0;border-radius:12px;margin-bottom:12px;overflow:hidden;}
-.faq-q{background:#F0F6FD;padding:16px 22px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#0D1B2A;user-select:none;gap:12px;}
-.faq-q:hover{background:#ddeeff;}
-.faq-q::after{content:'+';font-size:1.3rem;font-weight:300;color:#0057B8;flex-shrink:0;}
-.faq-item.open .faq-q::after{content:'−';}
-.faq-a{display:none;padding:16px 22px;font-size:.93rem;line-height:1.75;color:#374151;background:#fff;}
-.faq-item.open .faq-a{display:block;}
-/* CONTACT FORM */
-.contact-form { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-.contact-form .full { grid-column:1/-1; }
-.contact-form input, .contact-form textarea, .contact-form select {
-  width:100%; padding:13px 18px; border:2px solid #d0e2f0; border-radius:10px;
-  font-family:'Montserrat',sans-serif; font-size:.95rem; color:#1a2b3c;
-  background:#fff; transition:border-color .2s; box-sizing:border-box;
-}
-.contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:#0057B8; }
-.contact-form textarea { min-height:130px; resize:vertical; }
-.contact-form button { background:#F5BA18; color:#0D1B2A; border:none; padding:14px 36px; border-radius:50px; font-weight:800; font-size:1rem; cursor:pointer; transition:transform .2s,box-shadow .2s; justify-self:start; }
-.contact-form button:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,186,24,.5); }
-/* REVIEWS */
-.reviews-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
-.review-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; padding:26px 24px; }
-.review-stars { color:#F5BA18; font-size:1.1rem; margin-bottom:10px; }
-.review-text { font-size:.93rem; color:#374151; line-height:1.7; margin:0 0 16px; font-style:italic; }
-.review-author { font-weight:800; font-size:.88rem; color:#0D1B2A; }
-.review-area { color:#6b7280; font-size:.82rem; }
-/* CTA STRIP */
-.cta-strip { text-align:center; }
-.cta-strip h2 { color:#fff; font-size:clamp(1.4rem,3vw,2.1rem); font-weight:900; margin:0 0 10px; text-shadow:0 2px 8px rgba(0,0,0,.3); }
-.cta-strip p { color:rgba(255,255,255,.8); margin:0 0 28px; }
-.cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-.cta-btn-y { background:#F5BA18; color:#0D1B2A; padding:14px 32px; border-radius:50px; font-weight:800; font-size:1rem; display:inline-flex; align-items:center; gap:8px; transition:transform .2s; }
-.cta-btn-y:hover { transform:translateY(-2px); }
-.cta-btn-o { border:2px solid rgba(255,255,255,.5); color:#fff; padding:14px 32px; border-radius:50px; font-weight:700; font-size:1rem; transition:border-color .2s; }
-.cta-btn-o:hover { border-color:#00AEEF; color:#00AEEF; }
-</style>
 <body class="interior-page">
-<body class="interior-page">
-		
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/ProfessionalService">
 	<head>
@@ -443,11 +445,13 @@ body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
 	</section>
 </nav>
 <!-- END LARGE NAVIGATION -->
-<div id="page"><main id="content">
+
+<div id="page">
+<main id="content">
 <section class="page-hero">
   <img class="ph-img" src="/uplift-data/images/Projects/house-wash-in-crosby-tx/house-wash-in-crosby-tx-001.jpg" alt="Recent pressure washing projects">
   <div class="ph-inner">
-    <div class="breadcrumb-row"><a href="/">Home</a><span>›</span><a href="/projects">Projects</a></div>
+    <div class="breadcrumb-row"><a href="/">Home</a><span>›</span><span style="color:rgba(255,255,255,.7);font-size:.82rem;font-weight:600;">Projects</span></div>
     <h1>Our Recent Projects</h1>
     <p class="hero-sub">Real results for real Houston homeowners.</p>
   </div>
@@ -460,14 +464,14 @@ body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
       <div class="photo-card"><img src="/uplift-data/images/Projects/house-wash-in-crosby-tx/house-wash-in-crosby-tx-001.jpg" alt="House Wash Crosby TX"><div class="photo-label">House Wash — Crosby, TX</div></div>
       <div class="photo-card"><img src="/uplift-data/images/Projects/house-washing-driveway-baytown/house-dribeway-baytown-1.jpg" alt="House &amp; Driveway Baytown"><div class="photo-label">House &amp; Driveway — Baytown</div></div>
       <div class="photo-card"><img src="/uplift-data/images/Projects/roof-washing-baytown.jpg" alt="Roof Washing Baytown"><div class="photo-label">Roof Washing — Baytown, TX</div></div>
-      <div class="photo-card"><img src="/uplift-data/images/Projects/house-wash-concrete-cleaning-spring-tx.jpg" alt="Concrete Cleaning Spring TX"><div class="photo-label">Concrete Cleaning — Spring, TX</div></div>
-      <div class="photo-card"><img src="/uplift-data/images/Projects/storage-facility-cleaning-1.jpg" alt="Storage Facility Cleaning"><div class="photo-label">Storage Facility Clean</div></div>
+      <div class="photo-card"><img src="/uplift-data/images/Projects/house-wash-concrete-cleaning-spring-tx.jpg" alt="Concrete Cleaning"><div class="photo-label">Concrete Cleaning — Spring, TX</div></div>
+      <div class="photo-card"><img src="/uplift-data/images/Projects/storage-facility-cleaning-1.jpg" alt="Storage Facility"><div class="photo-label">Storage Facility Clean</div></div>
       <div class="photo-card"><img src="/uplift-data/images/Projects/roof-washing-pearland-1.jpg" alt="Roof Washing Pearland"><div class="photo-label">Roof Washing — Pearland, TX</div></div>
-      <div class="photo-card"><img src="/uplift-data/images/Projects/house-wash-and-driveway-cl/cover-photo.jpeg" alt="House &amp; Driveway Clean"><div class="photo-label">House &amp; Driveway</div></div>
+      <div class="photo-card"><img src="/uplift-data/images/Projects/house-wash-and-driveway-cl/cover-photo.jpeg" alt="House &amp; Driveway"><div class="photo-label">House &amp; Driveway Wash</div></div>
     </div>
   </div>
 </section>
-<section class="pg-section dark">
+<section class="pg-section blue">
   <div class="pg-inner cta-strip">
     <h2>Ready to Get Started?</h2>
     <p>Call us or request a free estimate online — no obligation, fast response.</p>
@@ -477,7 +481,9 @@ body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
     </div>
   </div>
 </section>
-</main></div>
+</main>
+</div>
+
 <!-- START FOOTER -->
 <footer class="fb-ftr-1">
 	<div class="container-fluid mx-auto">
@@ -557,8 +563,5 @@ body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
 <!-- END FOOTER -->	
 	</body>
 </html>
-
-
-	</body>
+</body>
 </html>
-</body></html>
