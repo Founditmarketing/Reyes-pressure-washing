@@ -60,6 +60,171 @@
 <script type="module" src="/uplift-assets/front-end-injections/js/simple-lightbox.js"></script>
 <script type="module" src="/uplift-assets/front-end-injections/js/init-simple-lightbox.js"></script>
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+body { font-family:'Montserrat',sans-serif; margin:0; background:#F0F6FD; }
+/* PAGE HERO */
+.page-hero {
+  background: linear-gradient(135deg, #0D1B2A 0%, #0057B8 100%);
+  position: relative; overflow: hidden; min-height: 260px;
+  display: flex; align-items: center;
+}
+.page-hero .ph-img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.3;
+}
+.page-hero .ph-inner {
+  position:relative; z-index:2; padding:60px 48px; max-width:1100px; margin:0 auto; width:100%;
+}
+.page-hero .breadcrumb-row { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
+.page-hero .breadcrumb-row a { color:rgba(255,255,255,.65); font-size:.82rem; font-weight:600; }
+.page-hero .breadcrumb-row a:hover { color:#F5BA18; }
+.page-hero .breadcrumb-row span { color:rgba(255,255,255,.35); margin:0 3px; }
+.page-hero h1 { color:#fff; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:900; margin:0 0 10px; }
+.page-hero .hero-sub { color:#00AEEF; font-size:1rem; font-weight:700; max-width:600px; margin:0; }
+/* SECTION WRAPPER */
+.pg-section { padding:56px 32px; }
+.pg-section.white { background:#fff; }
+.pg-section.light { background:#F0F6FD; }
+.pg-section.dark { background:linear-gradient(135deg,#0D1B2A,#0057B8); color:#fff; border-top:4px solid #00AEEF; }
+.pg-inner { max-width:1100px; margin:0 auto; }
+.pg-section-title { font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:800; color:#0D1B2A; margin:0 0 8px; }
+.pg-section.dark .pg-section-title { color:#fff; }
+.pg-section-sub { color:#6b7280; font-size:1rem; margin:0 0 36px; }
+.pg-section.dark .pg-section-sub { color:rgba(255,255,255,.75); }
+/* BENEFIT CARDS */
+.benefit-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
+.benefit-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; padding:28px 24px; transition:border-color .2s,box-shadow .2s; }
+.benefit-card:hover { border-color:#00AEEF; box-shadow:0 8px 28px rgba(0,174,239,.12); }
+.benefit-icon { font-size:1.8rem; color:#0057B8; margin-bottom:12px; }
+.benefit-card h3 { font-size:.95rem; font-weight:800; color:#0D1B2A; margin:0 0 8px; }
+.benefit-card p { font-size:.88rem; color:#6b7280; line-height:1.65; margin:0; }
+/* TWO-COL */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.two-col img { width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,.12); object-fit:cover; height:360px; }
+@media(max-width:768px){ .two-col { grid-template-columns:1fr; } .ph-inner { padding:44px 18px; } .pg-section { padding:40px 18px; } }
+/* PHOTO GRID */
+.photo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+.photo-card { border-radius:12px; overflow:hidden; position:relative; aspect-ratio:4/3; }
+.photo-card img { width:100%; height:100%; object-fit:cover; transition:transform .35s; }
+.photo-card:hover img { transform:scale(1.05); }
+.photo-label { position:absolute; bottom:0; left:0; right:0; padding:18px 14px 12px; background:linear-gradient(transparent,rgba(13,27,42,.82)); color:#fff; font-weight:700; font-size:.85rem; }
+/* SERVICE LIST GRID */
+.svc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
+.svc-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; overflow:hidden; transition:transform .25s,border-color .25s,box-shadow .25s; }
+.svc-card:hover { transform:translateY(-6px); border-color:#00AEEF; box-shadow:0 12px 36px rgba(0,174,239,.14); }
+.svc-card img { width:100%; height:200px; object-fit:cover; display:block; }
+.svc-card-body { padding:22px 20px; }
+.svc-card-body h3 { font-size:1.05rem; font-weight:800; color:#0D1B2A; margin:0 0 8px; }
+.svc-card-body p { font-size:.88rem; color:#6b7280; line-height:1.6; margin:0 0 14px; }
+.svc-card-body a.svc-link { display:inline-block; background:#0057B8; color:#fff; padding:9px 22px; border-radius:50px; font-weight:700; font-size:.85rem; transition:background .2s; }
+.svc-card-body a.svc-link:hover { background:#00AEEF; }
+/* AREA GRID */
+.area-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; }
+.area-pill { background:#fff; border:2px solid #d0e2f0; border-radius:50px; padding:12px 20px; text-align:center; font-weight:700; color:#0D1B2A; font-size:.9rem; transition:border-color .2s,color .2s; display:flex; align-items:center; justify-content:center; gap:8px; }
+.area-pill:hover { border-color:#0057B8; color:#0057B8; }
+.area-pill i { color:#00AEEF; font-size:.75rem; }
+/* FAQ */
+.faq-item{border:1px solid #d0e2f0;border-radius:12px;margin-bottom:12px;overflow:hidden;}
+.faq-q{background:#F0F6FD;padding:16px 22px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#0D1B2A;user-select:none;gap:12px;}
+.faq-q:hover{background:#ddeeff;}
+.faq-q::after{content:'+';font-size:1.3rem;font-weight:300;color:#0057B8;flex-shrink:0;}
+.faq-item.open .faq-q::after{content:'−';}
+.faq-a{display:none;padding:16px 22px;font-size:.93rem;line-height:1.75;color:#374151;background:#fff;}
+.faq-item.open .faq-a{display:block;}
+/* CONTACT FORM */
+.contact-form { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.contact-form .full { grid-column:1/-1; }
+.contact-form input, .contact-form textarea, .contact-form select {
+  width:100%; padding:13px 18px; border:2px solid #d0e2f0; border-radius:10px;
+  font-family:'Montserrat',sans-serif; font-size:.95rem; color:#1a2b3c;
+  background:#fff; transition:border-color .2s; box-sizing:border-box;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:#0057B8; }
+.contact-form textarea { min-height:130px; resize:vertical; }
+.contact-form button { background:#F5BA18; color:#0D1B2A; border:none; padding:14px 36px; border-radius:50px; font-weight:800; font-size:1rem; cursor:pointer; transition:transform .2s,box-shadow .2s; justify-self:start; }
+.contact-form button:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,186,24,.5); }
+/* REVIEWS */
+.reviews-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
+.review-card { background:#fff; border:2px solid #d0e2f0; border-radius:14px; padding:26px 24px; }
+.review-stars { color:#F5BA18; font-size:1.1rem; margin-bottom:10px; }
+.review-text { font-size:.93rem; color:#374151; line-height:1.7; margin:0 0 16px; font-style:italic; }
+.review-author { font-weight:800; font-size:.88rem; color:#0D1B2A; }
+.review-area { color:#6b7280; font-size:.82rem; }
+/* CTA STRIP */
+.cta-strip { text-align:center; }
+.cta-strip h2 { color:#fff; font-size:clamp(1.4rem,3vw,2.1rem); font-weight:900; margin:0 0 10px; text-shadow:0 2px 8px rgba(0,0,0,.3); }
+.cta-strip p { color:rgba(255,255,255,.8); margin:0 0 28px; }
+.cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cta-btn-y { background:#F5BA18; color:#0D1B2A; padding:14px 32px; border-radius:50px; font-weight:800; font-size:1rem; display:inline-flex; align-items:center; gap:8px; transition:transform .2s; }
+.cta-btn-y:hover { transform:translateY(-2px); }
+.cta-btn-o { border:2px solid rgba(255,255,255,.5); color:#fff; padding:14px 32px; border-radius:50px; font-weight:700; font-size:1rem; transition:border-color .2s; }
+.cta-btn-o:hover { border-color:#00AEEF; color:#00AEEF; }
+</style>
+<body class="interior-page">
+<body class="interior-page">
+		
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/ProfessionalService">
+	<head>
+	<meta name="powered-by" content="Uplift">
+	<meta name="p-type" content="Service">
+<script type="application/ld+json">{
+    "@context": "http:\/\/schema.org",
+    "@type": "ProfessionalService",
+    "name": "Reyes Pressure Washing",
+    "url": "https:\/\/www.reyespw.com\/",
+    "logo": "https:\/\/www.reyespw.com\/\/uplift-data\/images\/companyLogo.png",
+    "image": "https:\/\/www.reyespw.com\/\/uplift-data\/images\/companyLogo.png",
+    "telephone": "281-683-0111",
+    "address": [
+        {
+            "@type": "PostalAddress",
+            "streetAddress": "115 Commerce Ln",
+            "addressLocality": "Highlands",
+            "addressRegion": "TX",
+            "postalCode": "77562"
+        }
+    ]
+}</script>
+<script type="application/ld+json">{
+    "@context": "https:\/\/schema.org",
+    "@type": "WebSite",
+    "name": "Reyes Pressure Washing",
+    "url": "https:\/\/www.reyespw.com\/"
+}</script>
+		
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta property="og:type" content="website" />
+	<meta itemprop="logo" content="https://www.reyespw.com//images/logo.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="/uplift-data/themes/default-theme/styles/theme.css" rel="stylesheet" type="text/css">
+	<link href="/uplift-assets/redesign.css" rel="stylesheet" type="text/css">
+	
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer src="/uplift-data/themes/default-theme/styles/dependencies/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<script defer src="/uplift-data/themes/default-theme/js/navigation-manager-app.min.js" type="text/javascript"></script>
+	<script defer src="/uplift-data/themes/default-theme/js/anime.min.js"></script>
+	<script defer src="/uplift-data/themes/default-theme/js/inView.jquery.min.js"></script>
+	<script defer src="/uplift-data/themes/default-theme/js/animation-engine.min.js"></script>
+	<script defer src="/uplift-data/themes/default-theme/js/pagination.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-199669732-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-199669732-1');
+</script>
+		<title>House Washing | Home Exterior Surface Cleaning In Houston</title>
+<meta name="description" itemprop="description" property="og:description" content="Reyes Pressure Washing provides customers in Houston with exceptional house washing service. Call 281-683-0111 to schedule your professional exterior surface cleaning."><meta property="og:title" content="Professional Houston House Washing Crew"><meta property="og:image" content="https://www.reyespw.com//uplift-data/images/services/house-washing-houston.jpg"><meta property="og:url" content="https://www.reyespw.com//house-washing">	<link rel="stylesheet" href="/uplift-assets/front-end-injections/css/simple-lightbox.css">
+<script type="module" src="/uplift-assets/front-end-injections/js/simple-lightbox.js"></script>
+<script type="module" src="/uplift-assets/front-end-injections/js/init-simple-lightbox.js"></script>
+</head>
 	<body class="interior-page">
 		
 	<a class="skip-main" href="#content">Skip to main content</a>
@@ -278,333 +443,57 @@
 	</section>
 </nav>
 <!-- END LARGE NAVIGATION -->
-		<div id="page">
-			<main class="container-fluid" id="content">
-				<div class="row">
-					<div class="col-12 col-xl-8 mx-auto py-5">
-						<div id="cms-breadcrumb" class="minimal-breadcrumb d-lg-flex d-none">
-	<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":0,"item":{"@id":"https:\/\/www.reyespw.com\/\/","name":"Home"}},{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.reyespw.com\/\/pressure-washing-company","name":"Services"}}]}</script>
-
-	<div class="trail">
-		<a title="Home" href="/">Home</a>
-	</div>
-	
-	<div class="trail">
-		<a title="Services" href="/pressure-washing-company">Services</a>
-	</div>
-	
-</div>
-						<h1 class="">Finest Pressure Washing Company In Houston</h1>
-<p>
-	Reyes Pressure Washing is a preferred local pressure washing company in Houston that offers superior cleaning results. We make it a point to offer the services that our local residential customers need, while ensuring that the quality is top-notch.
-</p>
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/house-washing">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/house-washing-houston.webp">
-					<img alt="House washing houston" src="/uplift-data/images/services/house-washing-houston.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/house-washing">House Washing</a></h2>
-		<p>
-			One of the most common reasons customers need a pressure washing company is for house washing. Our exterior cleaning services are geared towards improving the look and condition of your home.
-		</p>
-		<a href="/house-washing" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/roof-cleaning">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/roof-cleaning-houston.webp">
-					<img alt="Roof cleaning houston" src="/uplift-data/images/services/roof-cleaning-houston.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/roof-cleaning">Roof Cleaning</a></h2>
-		<p>
-			When hiring a <a href="/">Houston pressure washing</a> team to take care of roof cleaning, make sure they use soft washing. At Reyes Pressure Washing, we wouldn't dare use anything but this safe and effective cleaning method to restore the beauty of your home and maintain your rooftop.
-		</p>
-		<a href="/roof-cleaning" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/driveway-washing">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/driveway-washing-houston.webp">
-					<img alt="Driveway washing houston" src="/uplift-data/images/services/driveway-washing-houston.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/driveway-washing">Driveway Washing</a></h2>
-		<p>
-			Even professional driveway washing is critical for maintaining your home's curb appeal. Without regular cleaning, your driveway becomes dirty and stained, and the surface remains slippery and hazardous for foot traffic.
-		</p>
-		<a href="/driveway-washing" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/sidewalk-cleaning">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/sidewalk-cleaning-houston.webp">
-					<img alt="Sidewalk cleaning houston" src="/uplift-data/images/services/sidewalk-cleaning-houston.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/sidewalk-cleaning">Sidewalk Cleaning</a></h2>
-		<p>
-			Another job we're proud to take care of as a preferred local pressure washing company is sidewalk cleaning. We're committed to making your walkways and driveways safer for use to prevent slip-and-fall incidents.
-		</p>
-		<a href="/sidewalk-cleaning" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/patio-washing">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/patio-washing-houston.webp">
-					<img alt="Patio washing houston" src="/uplift-data/images/services/patio-washing-houston.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/patio-washing">Patio Washing</a></h2>
-		<p>
-			Pressure washing for <a href="/patio-washing">patio washing</a> is the ideal way to get your outdoor living space ready for another season of use. You may also want to let us clean it as the season commences to take the best care of it as possible.
-		</p>
-		<a href="/patio-washing" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/gutter-cleaning">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/gutter-cleaning.webp">
-					<img alt="Gutter cleaning" src="/uplift-data/images/services/gutter-cleaning.jpg" class="">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/gutter-cleaning">Gutter Cleaning</a></h2>
-		<p>
-			We offer premium gutter cleaning for the inside and outside of your gutters. <strong>For high-quality work that is unparalleled, call us in Houston for superior service from a dedicated pressure washing company. </strong>
-		</p>
-		<a href="/gutter-cleaning" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/pressure-washing-company/fence-staining-and-sealing">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/fence-cleaning.webp">
-					<img alt="Fence cleaning" src="/uplift-data/images/services/fence-cleaning.jpg">
-				</picture>
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/pressure-washing-company/fence-staining-and-sealing">Fence Staining and Sealing</a></h2>
-		<p>
-			Are you looking for an expert in Houston to tackle your fence staining and sealing? Fence staining and sealing is the process of applying a protective coating to your wooden fence to help prevent damage from the elements and prolong its lifespan.
-		</p>
-		<a href="/pressure-washing-company/fence-staining-and-sealing" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-<div class="row align-items-center p-3">
-	<div class="col-md-4 col-12">
-		<div class="text-center p-3">
-			<a href="/parking-lot-striping">
-				<picture>
-					<source type="image/webp" srcset="/uplift-data/images/services/parking-lot-striping-1.webp">
-					<img src="/uplift-data/images/services/parking-lot-striping-1.jpg" alt="Parking lot striping" class="">
-				</picture>
-
-			</a>
-		</div>
-	</div>
-	<div class="col-md-8 col-12">
-		<h2 class=""><a class="" href="/parking-lot-striping">Parking Lot Striping</a></h2>
-		<p>
-			Property managers and business owners in Houston who need crisp, compliant parking lot striping call Reyes Pressure Washing. We deliver professional layouts and long-lasting markings that boost safety, improve traffic flow, and help keep your site aligned with ADA/TAS and local fire lane requirements.
-		</p>
-		<a href="/parking-lot-striping" class="btn btn-more">Read More</a>
-	</div>	
-</div>
-
-					</div>
-				</div>
-
-				
-	<!-- START PROJECTS -->
-	<section class="row bg-picture-container">
-		<picture>
-			<source media="(max-width:568px)" type="image/webp" srcset="/uplift-data/images/layout/banners/bg-water-m.webp">
-			<source type="image/webp" srcset="/uplift-data/images/layout/banners/bg-water.webp">
-			<img src="/uplift-data/images/layout/banners/bg-water.jpg" class="bg-picture watermark" alt="watermark">
-		</picture>
-		<div class="col-12 align-self-center mx-auto p-2 p-lg-5 text-center">
-			<div class="p-0 p-lg-5 text-center">
-				<h2 class="text-center f-prime h1">
-					VIEW OUR RECENT PROJECTS
-				</h2><br><br>
-				<div class="card-deck">
-	
-	<div class="card mx-auto">
-		<picture>
-			<img src="/uplift-data/images/projects/siding-washing-in-crosby-t/cover-photo.jpeg" class="card-img-top" alt="Siding Washing in Crosby, TX – Dramatic Before & After">
-		</picture>
-		<div class="card-body text-primary">
-			<h2 class="h4">
-				<a href="/projects/siding-washing-in-crosby-tx-dramatic-before-after">Siding Washing in Crosby, TX – Dramatic Before & After</a>
-			</h2>
-			<p>We recently completed a siding washing project in Crosby, TX, delivering a complete transformation for this home’s exterior and concrete culvert area. Using our professional soft wash method, we safely cleaned the hardy plank siding, removing years of built-up mold, mildew, and grime without causing any [&hellip;]</p>
-		</div>
-		<div class="card-footer">
-			<div class="mb-0">
-				<a href="/projects/siding-washing-in-crosby-tx-dramatic-before-after" class="btn btn-cta">
-					Find Out More
-				</a>
-			</div>
-		</div>
-	</div>
-	
-	<div class="card mx-auto">
-		<picture>
-			<img src="/uplift-data/images/projects/roof-wash-in-montgomery/cover-photo.jpeg" class="card-img-top" alt="Roof Wash in Montgomery">
-		</picture>
-		<div class="card-body text-primary">
-			<h2 class="h4">
-				<a href="/projects/roof-wash-in-montgomery">Roof Wash in Montgomery</a>
-			</h2>
-			<p>We soft washed a big metal roof. The key to soft washing metal roofs is to keep it wet, put multiple coats on, and rinse thoroughly!
-	
-	
-		Looking for expert Roof Cleaning in Conroe, TX? We recently soft washed a large metal roof—using multiple coats, constant moisture, and [&hellip;]</p>
-		</div>
-		<div class="card-footer">
-			<div class="mb-0">
-				<a href="/projects/roof-wash-in-montgomery" class="btn btn-cta">
-					Find Out More
-				</a>
-			</div>
-		</div>
-	</div>
-	
-</div>
-		  </div>
-		  <a href="/projects"><p class="btn btn-more f-prime">View More Projects</p></a>
-		</div>
-	</section>
-	<!-- END PROJECTS -->				
-	<!-- START LATEST ARTICLES -->
-	<section class="row bg-primary bgcover align-items-center overno">
-			<div class="col-12 col-md-7 order-2 py-5 px-xl-5 text-white order-2 order-md-1">
-				<h2 class="f-prime text-uppercase text-white">
-					EXTERIOR CLEANING TIPS
-				</h2>
-				<ul class="mb-0 pb-0 timeline">
-	
-	<li>
-		<a href="/pressure-washing-tips/soft-wash-vs-pressure-washing-whats-safe-for-houstonarea-homes" class="timeline-title">
-			Soft Wash vs. Pressure Washing: What’s Safe for Houston-Area Homes?
-		</a>
-		<p>Thinking about house washing in Houston, but not sure which method is safest? You&rsquo;re not alone. Homeowners from Pearland to Kingwood deal with algae, mildew, and pollen that stick like glue, especially after long, humid summers. The key is choosing the right approach for your siding [&hellip;]</p>
-	</li>
-	
-	<li>
-		<a href="/pressure-washing-tips/why-hire-a-pressure-washing-professional-the-dangers-of-diy-house-washing" class="timeline-title">
-			Why Hire A Pressure Washing Professional: The Dangers Of DIY House Washing
-		</a>
-		<p>It's common knowledge that pressure washing is an essential part of residential maintenance. If you want your home to look good and be in tiptop condition, regular exterior cleaning is a necessary part of the upkeep.
-
-
-	What seems to be a common misconception about the task of [&hellip;]</p>
-	</li>
-	
-</ul>
-				<div class="mb-0">
-					<a href="/pressure-washing-tips" class="btn btn-cta animated-fade-in-right">
-						Read More
-					</a>
-				</div>
-			</div>
-			<div class="col-12 col-md-5 col-xl-5 p-0 align-self-stretch bgcover order-1 order-md-2">
-				<div class="bg-picture-container h-100">
-					<svg viewBox="0 0 49.2 600" class="wave-v left prime">
-						<path class="st0" d="M-1,600V0h15.3c0,0,30,82.7,30,150s-34,79.8-34,150s20,64.4,20,150s-16,150-16,150H-1z"/>
-					</svg>
-					<svg viewBox="0 0 600 49.2" class="wave-h prime">
-						<path class="st0" d="M600,49.2H0V33.9c0,0,82.7-30,150-30s79.8,34,150,34s64.4-20,150-20s150,16,150,16V49.2z"/>
-					</svg>
-					<picture>
-						<source media="(max-width:568px)" type="image/webp" srcset="/uplift-data/images/layout/banners/article-m.webp">
-						<source type="image/webp" srcset="/uplift-data/images/layout/banners/article.webp">
-						<img src="/uplift-data/images/layout/banners/article.jpg" class="bg-picture" alt="articles">
-					</picture>
-				</div>
-			</div>
-	</section>
-	<!-- END LATEST ARTICLES -->					
-<!-- START CTA -->
-<section class="row bg-secondary overno">
-	<div class="col-xl-10 col-lg-11 col-12 text-center mx-auto p-5">
-		<div>
-			<h2 class="text-white display-4">
-				CALL REYES PRESSURE WASHING TODAY FOR TOP-QUALITY PRESSURE WASHING IN HOUSTON!
-			</h2>
-			<div class="row align-items-center justify-content-center">
-				<div class="m-1">
-					<a href="/contact-us" class="btn btn-more animated-fade-in-left">
-						Get a Free Estimate
-					</a>
-				</div>
-				<div class="m-1">
-					<a onClick="gtag('event', 'click', { event_category: 'PhoneEvent', event_action: 'Tap', event_label: 'PhoneCall'});" href="tel:+1-281-683-0111" class="btn btn-more animated-fade-in-right">
-						<i class="fas fa-phone"></i> Give us a call today!
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="page"><main id="content">
+<section class="page-hero">
+  <img class="ph-img" src="/uplift-data/images/services/house-washing-houston.jpg" alt="Houston Pressure Washing Services">
+  <div class="ph-inner">
+    <div class="breadcrumb-row"><a href="/">Home</a><span>›</span><a href="/pressure-washing-company">Services</a></div>
+    <h1>Our Pressure Washing Services</h1>
+    <p class="hero-sub">Safe, effective exterior cleaning for every surface on your property.</p>
+  </div>
 </section>
-<!-- END CTA -->
-			</main>
-		</div>
-		
+<section class="pg-section white">
+  <div class="pg-inner">
+    <p style="font-size:1.05rem;color:#374151;max-width:780px;margin:0 auto 44px;text-align:center;line-height:1.8;">Reyes Pressure Washing serves the greater Houston area with professional exterior cleaning for homes and businesses. We use the right technique for every surface — from soft wash to high-pressure — with no risk of damage.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/house-washing-houston.jpg" alt="House Washing">
+        <div class="svc-card-body"><h3>House Washing</h3><p>Safe soft washing for siding, painted surfaces, and home exteriors.</p><a href="/house-washing" class="svc-link">Learn More</a></div>
+      </div>
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/roof-cleaning-houston.jpg" alt="Roof Cleaning">
+        <div class="svc-card-body"><h3>Roof Cleaning</h3><p>Low-pressure soft wash that removes algae and extends roof life.</p><a href="/roof-cleaning" class="svc-link">Learn More</a></div>
+      </div>
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/driveway-washing-houston.jpg" alt="Driveway Washing">
+        <div class="svc-card-body"><h3>Driveway Washing</h3><p>Deep concrete cleaning to remove oil stains, mold, and tire marks.</p><a href="/driveway-washing" class="svc-link">Learn More</a></div>
+      </div>
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/sidewalk-cleaning-houston.jpg" alt="Sidewalk Cleaning">
+        <div class="svc-card-body"><h3>Sidewalk Cleaning</h3><p>Remove slip hazards and staining from walkways, paths, and steps.</p><a href="/sidewalk-cleaning" class="svc-link">Learn More</a></div>
+      </div>
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/patio-washing-houston.jpg" alt="Patio Washing">
+        <div class="svc-card-body"><h3>Patio Washing</h3><p>Get your outdoor living space summer-ready with a professional patio clean.</p><a href="/patio-washing" class="svc-link">Learn More</a></div>
+      </div>
+      <div class="svc-card">
+        <img src="/uplift-data/images/services/gutter-cleaning.jpg" alt="Gutter Cleaning">
+        <div class="svc-card-body"><h3>Gutter Cleaning</h3><p>Clear debris and flush downspouts to protect your home from water damage.</p><a href="/gutter-cleaning" class="svc-link">Learn More</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pg-section dark">
+  <div class="pg-inner cta-strip">
+    <h2>Ready to Get Started?</h2>
+    <p>Call us or request a free estimate online — no obligation, fast response.</p>
+    <div class="cta-btns">
+      <a href="tel:+1-281-683-0111" class="cta-btn-y" onclick="gtag&&gtag('event','click',{event_category:'PhoneEvent',event_action:'Tap',event_label:'PhoneCall'})"><i class="fas fa-phone"></i> 281-683-0111</a>
+      <a href="/contact-us" class="cta-btn-o">Get a Free Estimate</a>
+    </div>
+  </div>
+</section>
+</main></div>
 <!-- START FOOTER -->
 <footer class="fb-ftr-1">
 	<div class="container-fluid mx-auto">
@@ -685,3 +574,7 @@
 	</body>
 </html>
 
+
+	</body>
+</html>
+</body></html>
