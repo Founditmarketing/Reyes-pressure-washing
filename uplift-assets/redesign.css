@@ -349,7 +349,22 @@ section.bg-picture-container h2 {
 .timeline li p { color: rgba(255,255,255,0.8) !important; font-size: 0.9rem !important; margin: 0 !important; }
 
 /* ── CTA SECTION ── */
-.bg-secondary .display-4 { font-size: clamp(1.5rem, 3.5vw, 2.5rem) !important; line-height: 1.2 !important; }
+.bg-secondary, section.bg-secondary, div.bg-secondary {
+  background: linear-gradient(135deg, #0057B8 0%, #003d85 100%) !important;
+  border-top: 4px solid var(--rw-cyan) !important;
+}
+section.bg-secondary h1,
+section.bg-secondary h2,
+section.bg-secondary .display-4,
+section.bg-secondary .h1,
+div.bg-secondary h1,
+div.bg-secondary h2,
+div.bg-secondary .display-4 {
+  color: var(--rw-white) !important;
+  font-size: clamp(1.4rem, 3vw, 2.2rem) !important;
+  line-height: 1.3 !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
 
 /* ── FOOTER ── */
 .fb-ftr-1, footer.fb-ftr-1 { background: var(--rw-navy) !important; padding: 60px 0 0 !important; }
